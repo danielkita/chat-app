@@ -17,7 +17,7 @@ export const useMessages = () => {
         containerRef.current?.scrollBy(0, containerRef.current.scrollHeight);
       }, 50);
     });
-  }, []);
+  }, [appendMessage, getSocket]);
 
   return {
     messages,

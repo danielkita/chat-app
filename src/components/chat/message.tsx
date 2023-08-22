@@ -1,29 +1,24 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Reply } from 'lucide-react';
-import { useUser } from '@/components/user/use-user.ts';
+import { Message as MessageType } from 'types/message.ts';
 import { cn } from '@/lib/utils.ts';
+import { useUser } from '@/components/user/use-user.ts';
 import { UserAvatar } from '@/components/user/user-avatar.tsx';
 import { useReplyStore } from '@/components/chat/reply/use-reply-store.ts';
 
-type Props = React.PropsWithChildren<{
-  user: {
-    name: string;
-    id: string;
-  };
-  id: string;
+interface Props {
+  message: MessageType;
   showReplyButton?: boolean;
   replies?: number;
-}>;
+}
 
 const ANIMATION_OFFSET = 100;
 export const Message = ({
-  children,
-  user,
-  id,
+  message,
   showReplyButton = true,
   replies,
 }: Props) => {
+  const { user, id } = message;
   const { user: currentUser } = useUser();
   const { setMessageId } = useReplyStore();
 
@@ -63,7 +58,12 @@ export const Message = ({
                 <div
                   className={`overflow-ellipsis overflow-hidden p-4 rounded-lg  ${messageClass}`}
                 >
-                  {children}
+                  {message.type === 'TEXT' && <>{message.text}</>}
+                  {message.type === 'IMAGE' && (
+                    <>
+                      <img width={300} src={message.text} alt="chat image" />
+                    </>
+                  )}
                 </div>
               </div>
             </div>

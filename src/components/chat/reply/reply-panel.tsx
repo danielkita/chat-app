@@ -43,23 +43,17 @@ export const ReplyPanel = () => {
                       <div>
                         <Message
                           showReplyButton={false}
-                          id={threadRootMessage.id}
+                          message={threadRootMessage}
                           key={threadRootMessage.id}
-                          user={threadRootMessage.user}
-                        >
-                          {threadRootMessage.text}
-                        </Message>
+                        />
                       </div>
                       <div>
                         {threadMessages.map((message) => (
                           <Message
+                            message={message}
                             showReplyButton={false}
-                            id={message.id}
                             key={message.id}
-                            user={message.user}
-                          >
-                            {message.text}
-                          </Message>
+                          />
                         ))}
                       </div>
                     </div>

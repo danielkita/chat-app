@@ -6,6 +6,7 @@ const initialMessages: Message[] = [
     id: window.crypto.randomUUID(),
     text: 'Hello! How are you?',
     date: new Date(),
+    type: 'TEXT',
     user: {
       id: window.crypto.randomUUID(),
       name: 'Mr. Robot',

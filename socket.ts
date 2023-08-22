@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
     id: randomUUID(),
     name: 'Anonymous',
   };
-  socket.on('message', (data: Pick<Message, 'user' | 'text'>) => {
+  socket.on('message', (data: Omit<Message, 'id' | 'date'>) => {
     const msg: Message = {
       ...data,
       id: randomUUID(),

@@ -1,3 +1,5 @@
+export type MessageType = 'TEXT' | 'IMAGE';
+
 export interface User {
   id: string;
   name: string;
@@ -9,4 +11,5 @@ export interface Message {
   user: User;
   threadId?: string;
   date: Date;
+  type: MessageType;
 }

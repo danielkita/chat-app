@@ -18,14 +18,7 @@ export const Messages = () => {
               (msg) => msg.threadId === message.id,
             ).length;
             return (
-              <Message
-                replies={replies}
-                key={message.id}
-                id={message.id}
-                user={message.user}
-              >
-                {message.text}
-              </Message>
+              <Message message={message} replies={replies} key={message.id} />
             );
           })}
       </AnimatePresence>
