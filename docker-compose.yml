@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  vite_docker:
+    build: .
+    image: node:18-alpine
+    container_name: vite_docker
+    command: /bin/sh -c "./entrypoint.sh"
+    ports:
+      - 4000:4000
+      - 5173:5173
+    working_dir: /srv/app
+    volumes:
+      - type: bind
+        source: ./
+        target: /srv/app
+    tty: true
