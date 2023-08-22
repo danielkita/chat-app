@@ -13,11 +13,19 @@ npm install
 npm run dev
 ```
 
+The app will be running on http://localhost:5173/
+
+You can also run the app with Docker:
+
+```bash
+docker compose up -d
+```
+
 ### Todo list
 
-[x] - Send messages via WS
-[x] - Threaded messages
-[x] - Sending images
-[ ] - Tests
-[ ] - Typing indicator
-[ ] - Use DB for storing data
+- [x] Send messages via WS
+- [x] Threaded messages
+- [x] Sending images
+- [ ] Tests
+- [ ] Typing indicator
+- [ ] Use DB for storing data
