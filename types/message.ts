@@ -7,4 +7,6 @@ export interface Message {
   id: string;
   text: string;
   user: User;
+  threadId?: string;
+  date: Date;
 }

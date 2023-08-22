@@ -1,8 +1,8 @@
 import { useChatInput } from '@/components/chat/use-chat-input.ts';
 import { Button } from '@/components/ui/button.tsx';
 
-export const ChatInput = () => {
-  const { handleSubmit } = useChatInput();
+export const ChatInput = ({ threadId }: { threadId?: string }) => {
+  const { handleSubmit } = useChatInput({ threadId });
 
   return (
     <form onSubmit={handleSubmit}>

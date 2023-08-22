@@ -1,9 +1,11 @@
 import { ChatInput } from '@/components/chat/chat-input.tsx';
 import { Messages } from '@/components/chat/messages.tsx';
+import { ReplyPanel } from '@/components/chat/reply/reply-panel.tsx';
 
 export const Chat = () => {
   return (
     <>
+      <ReplyPanel />
       <div className="h-16 bg-gray-200 flex items-center">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-gray-800">Chat App</h2>

@@ -22,6 +22,7 @@ io.on('connection', (socket) => {
     const msg: Message = {
       ...data,
       id: randomUUID(),
+      date: new Date(),
     };
     io.emit('message', msg);
   });

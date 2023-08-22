@@ -7,15 +7,27 @@ export const Messages = () => {
 
   return (
     <div
-      className="scroll-smooth max-w-full overflow-x-hidden"
+      className="scroll-smooth max-w-full overflow-x-hidden pr-4"
       ref={containerRef}
     >
       <AnimatePresence>
-        {messages.map((message) => (
-          <Message key={message.id} user={message.user}>
-            {message.text}
-          </Message>
-        ))}
+        {messages
+          .filter((message) => !message.threadId)
+          .map((message) => {
+            const replies = messages.filter(
+              (msg) => msg.threadId === message.id,
+            ).length;
+            return (
+              <Message
+                replies={replies}
+                key={message.id}
+                id={message.id}
+                user={message.user}
+              >
+                {message.text}
+              </Message>
+            );
+          })}
       </AnimatePresence>
     </div>
   );
