@@ -7,7 +7,6 @@ This is a simple chat app demo using React and Socket.io, styled with shadcn/ui.
 [x] - Send messages via WS
 [x] - Threaded messages
 [x] - Sending images
-[ ] - Responsive design
 [ ] - Tests
 [ ] - Typing indicator
 [ ] - Use DB for storing data

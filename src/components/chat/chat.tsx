@@ -6,8 +6,8 @@ export const Chat = () => {
   return (
     <>
       <ReplyPanel />
-      <div className="h-16 bg-gray-200 flex items-center">
-        <div className="container mx-auto px-4">
+      <div className="h-16 bg-gray-200 items-center px-4 hidden md:flex">
+        <div className="container mx-auto">
           <h2 className="text-2xl font-bold text-gray-800">Chat App</h2>
         </div>
       </div>
